@@ -35,7 +35,7 @@ public class poc_scenarios {
 		options.addArguments("--disable-extensions");
 		 options.addArguments("--disable-notifications");
 		//options.addArguments("disable-infobars");
-      WebDriver driver = new ChromeDriver(options);
+        WebDriver driver = new ChromeDriver(options);
       options.addArguments("--disable-notifications");
       System.out.println("Going to lanuch browser");
       driver.manage().window().maximize();
@@ -45,24 +45,24 @@ public class poc_scenarios {
 		//Login Function
 		String Title = driver.getTitle();
 		System.out.println("The Page Title is"+Title);
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		
 		String username1 = "ashwitha.1@wipro.com";
 		WebElement username = driver.findElement(By.id("userid"));
 		username.sendKeys(username1);
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		System.out.println("User Name entered sucessfully");
 		
 		String Password1 = "Ashwitha@123";
         WebElement password = driver.findElement(By.id("password"));
 		password.sendKeys(Password1);
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		System.out.println("Password entered Sucessfully");
 		
 		
 		WebElement LoginButton = driver.findElement(By.xpath("//button[contains(text(),'Sign In')]"));
 		LoginButton.click();
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		
 		System.out.println("Logged in sucessfully");
 		
@@ -92,12 +92,12 @@ public class poc_scenarios {
 			 WebElement CreateAccbutton = driver.findElement(By.xpath("//button[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:ls1:cb1']"));
 			 CreateAccbutton.click();
 			 System.out.println("Sucessfully clicked on the create acc button");
-			 Thread.sleep(3000);
+			 Thread.sleep(8000);
 			 
 			 WebElement Accname = driver.findElement(By.xpath("//input[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r22:0:pt1:it1::content']"));
 			 Accname.sendKeys("POC_DEMO1");
 			 System.out.println("Sucessfully Entered the Account Name");
-			 Thread.sleep(3000);
+			 Thread.sleep(8000);
 			 WebElement Savebutton = driver.findElement(By.xpath("//button[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r22:0:pt1:AP1:cb3']"));
 			 Savebutton.click();
 			 System.out.println("Sucessfully Created the Account Name");
