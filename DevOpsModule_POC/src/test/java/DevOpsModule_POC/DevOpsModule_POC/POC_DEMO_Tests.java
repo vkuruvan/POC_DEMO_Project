@@ -129,11 +129,11 @@ public boolean create_AccDetails(){
 		{
 			//HTML REPORT
 			
-			reports = new ExtentReports("C:\\report\\Auto_report.html");
-			Logger  = reports.startTest("Test Verify Log Title");
-			Logger.log(LogStatus.PASS, "Browser is going to be launch");
+			//reports = new ExtentReports("C:\\report\\Auto_report.html");
+			//Logger  = reports.startTest("Test Verify Log Title");
+			//Logger.log(LogStatus.PASS, "Browser is going to be launch");
 			
-	System.setProperty("webdriver.chrome.driver","C:\\Selinium_javadrivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe");
 			//WebDriver driver = new ChromeDriver();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-extensions");
@@ -145,7 +145,7 @@ public boolean create_AccDetails(){
 	      driver.manage().window().maximize();
 	      driver.get("https://ejtp.fa.em2.oraclecloud.com/fscmUI/faces/FuseWelcome");
 	      
-	      Logger.log(LogStatus.INFO, "Browser Started");
+	      //Logger.log(LogStatus.INFO, "Browser Started");
 		  System.out.println("Browser Lanuched sucessfully");
 
 			//Login Function
