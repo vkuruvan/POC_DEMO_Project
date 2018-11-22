@@ -6,26 +6,147 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
 
 public class POC_DEMO_Tests {
+	
+	WebDriver driver;
+	boolean rc;
+	
+  ExtentReports reports;
+    //helps to generate the logs in test report.
+    ExtentTest Logger;
+	
+	
+	public void html_Report() {
+		try
+		{
+			
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println("The exception is"+e);
+		
+		}
+	}
+	
+public boolean create_AccDetails(){
+		try
+		{
+			Thread.sleep(10000);
+			WebElement Pcontact = driver.findElement(By.xpath("//input[@id ='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:0:pt1:preferredContactNameId::content']"));
+			Pcontact.sendKeys("Shruthi B K");
+			
+			
+			Thread.sleep(10000);
+			Select type = new Select(driver.findElement(By.xpath("//select[@id ='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:0:pt1:sor1::content']")));
+			type.selectByVisibleText("Customer");
+			
+			//Selecting the address
+			Thread.sleep(10000);
+			Select Country = new Select(driver.findElement(By.xpath("//select[@id ='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:0:pt1:r4:0:r1:0:s2:LocationCountry::content']")));
+			Country.selectByValue("39");
+			
+			Thread.sleep(10000);
+			WebElement Address = driver.findElement(By.xpath("//input[@id='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:0:pt1:r4:0:r1:0:s2:i1:5:inputText2::content']"));
+			Address.sendKeys("Postmaster, Post Office CARMELRAM (SUB OFFICE), BANGALORE, KARNATAKA (KA), India (IN), Pin Code:- 560035");
+			
+			WebElement City = driver.findElement(By.xpath("//input[@id = '_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:0:pt1:r4:0:r1:0:s2:i1:8:inputText6::content']"));
+			City.sendKeys("Bangalore");
+			
+			WebElement State = driver.findElement(By.xpath("//input[@id ='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:0:pt1:r4:0:r1:0:s2:i1:9:inputText9::content']"));
+			State.sendKeys("Karnataka");
+			
+			WebElement postlcode = driver.findElement(By.xpath("//input[@id = '_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:0:pt1:r4:0:r1:0:s2:i1:10:inputText7::content']"));
+			postlcode.sendKeys("560035");
+			Thread.sleep(10000);
+			
+			
+			 
+			Thread.sleep(10000);
+			//Clicking on the Save and COntinue
+			WebElement button = driver.findElement(By.xpath("//button[@id='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:0:pt1:AP1:cb2']"));
+			button.click();
+			Thread.sleep(15000);
+			
+			//Creating the opportunity
+			System.out.println("Going to click on the Opportunity");
+			WebElement opportunity = driver.findElement(By.xpath("//div[@id = '_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:Opportunities::text']"));
+			opportunity.click();
+			Thread.sleep(15000);
+			
+			WebElement createopp = driver.findElement(By.xpath("//button[@id='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:r4:1:stsSrch:create-opportunity-commandButton']"));
+			createopp.click();
+			Thread.sleep(10000);
+			
+		System.out.println("Entered the Opportunity Page");
+			
+		        Thread.sleep(10000);
+				WebElement OppName = driver.findElement(By.xpath("//input[@id ='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:r4:1:r3:0:pt1:it1::content']"));
+			    OppName.sendKeys("POC_Demo_Opportunity");
+			    
+				Thread.sleep(10000);
+			    WebElement PrimaryContact = driver.findElement(By.xpath("//input[@id ='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:r4:1:r3:0:pt1:primaryContact::content']"));
+			    PrimaryContact.sendKeys("Shruthi B K");
+			    
+			    Thread.sleep(10000);
+			    WebElement Savebutt = driver.findElement(By.xpath("//button[@id = '_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:r4:1:r3:0:pt1:AP1:cb3']"));
+			    Savebutt.click();
+			    Thread.sleep(10000);
+			    
+			    WebElement SummrySavebutt = driver.findElement(By.xpath("//button[@id='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:r4:1:r3:1:pt1:object-subtitle:cb11']"));
+			    SummrySavebutt.click();
+			    Thread.sleep(10000);
+			    
+			    //Opoortunity Summary Page
+			    Thread.sleep(10000);
+			    WebElement OppSave =  driver.findElement(By.xpath("//button[@id='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:r4:1:r3:1:pt1:object-subtitle:cb1']"));
+			    OppSave.click();
+			    
+			    //Opportunities
+			    Thread.sleep(10000);
+			    WebElement Oppsave1 = driver.findElement(By.xpath("//button[@id='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:object-subtitle:cb8']"));
+			    Oppsave1.click();
+			    
+			}
+		catch(Exception e)
+		{
+			System.out.println("The excecption is"+e);
+			return false;
+		}
+		return true;
+		}
 	@Test
-	public void test1 () {
+	public void Login () {
 		System.out.println("Test1");
 		try 
 		{
-
-			System.setProperty("webdriver.chrome.driver","C:\\Selinium_javadrivers\\chromedriver.exe");
+			//HTML REPORT
+			
+			reports = new ExtentReports("C:\\report\\Auto_report.html");
+			Logger  = reports.startTest("Test Verify Log Title");
+			Logger.log(LogStatus.PASS, "Browser is going to be launch");
+			
+	System.setProperty("webdriver.chrome.driver","C:\\Selinium_javadrivers\\chromedriver.exe");
 			//WebDriver driver = new ChromeDriver();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-extensions");
 			 options.addArguments("--disable-notifications");
 			//options.addArguments("disable-infobars");
-	        WebDriver driver = new ChromeDriver(options);
+	        driver = new ChromeDriver(options);
 	      options.addArguments("--disable-notifications");
 	      System.out.println("Going to lanuch browser");
 	      driver.manage().window().maximize();
 	      driver.get("https://ejtp.fa.em2.oraclecloud.com/fscmUI/faces/FuseWelcome");
-			System.out.println("Browser Lanuched sucessfully");
+	      
+	      Logger.log(LogStatus.INFO, "Browser Started");
+		  System.out.println("Browser Lanuched sucessfully");
 
 			//Login Function
 			String Title = driver.getTitle();
@@ -57,12 +178,13 @@ public class POC_DEMO_Tests {
 			System.out.println("Button got clicked sucessfully");
 			Thread.sleep(3000);*/
 			
+			Thread.sleep(8000);
 			WebElement Navigator = driver.findElement(By.xpath("//a[@id = 'pt1:_UISmmLink']"));
 			Navigator.click();
-			Thread.sleep(3000);
+			Thread.sleep(15000);
 			
 			//Creating the Account
-			 WebElement Accbutton = driver.findElement(By.xpath("//a[@id = 'pt1:nv_ZCM_CUSTOMERCTRINFRA360_CUSTOMERS_CRM_CARD']"));
+			 WebElement Accbutton = driver.findElement(By.xpath("//a[@id = 'pt1:nv_itemNode_service_accounts']"));
 			 Accbutton.click();
 			 String PageTitle = driver.getTitle();
 			 System.out.println("The Title is"+PageTitle);
@@ -73,19 +195,28 @@ public class POC_DEMO_Tests {
 				 
 				 //Handled the popup window
 				 
-				 Thread.sleep(10000);
-				 WebElement CreateAccbutton = driver.findElement(By.xpath("//button[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:ls1:cb1']"));
+				 Thread.sleep(20000);
+				 WebElement CreateAccbutton = driver.findElement(By.xpath("//button[@id ='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:ls1:cb1']"));
 				 CreateAccbutton.click();
 				 System.out.println("Sucessfully clicked on the create acc button");
-				 Thread.sleep(8000);
+				 Thread.sleep(15000);
 				 
-				 WebElement Accname = driver.findElement(By.xpath("//input[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r22:0:pt1:it1::content']"));
-				 Accname.sendKeys("POC_DEMO1");
+				 WebElement Accname = driver.findElement(By.xpath("//input[@id='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:0:pt1:it1::content']"));
+				 Accname.sendKeys("POC_DEMO_2");
 				 System.out.println("Sucessfully Entered the Account Name");
-				 Thread.sleep(8000);
-				 WebElement Savebutton = driver.findElement(By.xpath("//button[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r22:0:pt1:AP1:cb3']"));
+				 Thread.sleep(15000);
+				/* WebElement Savebutton = driver.findElement(By.xpath("//button[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r22:0:pt1:AP1:cb3']"));
 				 Savebutton.click();
-				 System.out.println("Sucessfully Created the Account Name");
+				 System.out.println("Sucessfully Created the Account Name");*/
+				 
+				 System.out.println("started the steps adding address and contact");
+				 
+				 rc = create_AccDetails();
+				 if (rc == true)
+				 {
+					 System.out.println("Sucessfully added the Opportunity to Account");
+				 }
+				 
 				 }
 			 
 			 //Logout
@@ -102,6 +233,10 @@ public class POC_DEMO_Tests {
 			e.printStackTrace();
 			
 		}
+		
+		
+		
+		
 	}
 	
 }
