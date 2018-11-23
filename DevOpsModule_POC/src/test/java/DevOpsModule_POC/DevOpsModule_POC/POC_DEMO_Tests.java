@@ -1,40 +1,30 @@
 package DevOpsModule_POC.DevOpsModule_POC;
 
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
-
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
-
-
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 public class POC_DEMO_Tests {
 	
 	WebDriver driver;
 	boolean rc;
 	
-  ExtentReports reports;
-    //helps to generate the logs in test report.
-    ExtentTest Logger;
+ 
 	
+    @BeforeTest
+	public void beforeTest() {	
+	    driver = new ChromeDriver();  
+	}		
+	@AfterTest
+	public void afterTest() {
+		driver.quit();			
+	}	
 	
-	public void html_Report() {
-		try
-		{
-			
-			
-		}
-		catch(Exception e)
-		{
-			System.out.println("The exception is"+e);
-		
-		}
-	}
 	
 public boolean create_AccDetails(){
 		try
@@ -122,6 +112,7 @@ public boolean create_AccDetails(){
 		}
 		return true;
 		}
+
 	@Test
 	public void Login () {
 		System.out.println("Test1");
@@ -233,8 +224,6 @@ public boolean create_AccDetails(){
 			e.printStackTrace();
 			
 		}
-		
-		
 		
 		
 	}
