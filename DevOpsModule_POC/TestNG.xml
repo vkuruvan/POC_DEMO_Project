@@ -4,7 +4,8 @@
 <suite name="demoxmlfilecreation" verbose="1" >
   <test name="demoxml" >
     <classes>
-       <class name="DevOpsModule_POC.DevOpsModule_POC.POC_DEMO_Tests" />
+       <class name="DevOpsModule_POC.DevOpsModule_POC.POC_DEMO_Tests">
+       </class>
     </classes>
   </test>
  </suite>

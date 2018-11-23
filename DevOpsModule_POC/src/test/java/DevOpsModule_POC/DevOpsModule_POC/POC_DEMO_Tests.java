@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -14,16 +15,7 @@ public class POC_DEMO_Tests {
 	WebDriver driver;
 	boolean rc;
 	
- 
-	
-    @BeforeTest
-	public void beforeTest() {	
-	    driver = new ChromeDriver();  
-	}		
-	@AfterTest
-	public void afterTest() {
-		driver.quit();			
-	}	
+
 	
 	
 public boolean create_AccDetails(){
@@ -113,30 +105,30 @@ public boolean create_AccDetails(){
 		return true;
 		}
 
+//@BeforeTest
+//public void beforeTest() {	
+    //}		
+
 	@Test
 	public void Login () {
 		System.out.println("Test1");
 		try 
 		{
-			//HTML REPORT
-			
-			//reports = new ExtentReports("C:\\report\\Auto_report.html");
-			//Logger  = reports.startTest("Test Verify Log Title");
-			//Logger.log(LogStatus.PASS, "Browser is going to be launch");
-			
-			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe");
+			//driver = new ChromeDriver();  
+			System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir")+"\\geckodriver.exe");
 			//WebDriver driver = new ChromeDriver();
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--disable-extensions");
-			 options.addArguments("--disable-notifications");
+			//ChromeOptions options = new ChromeOptions();
+			//options.addArguments("--disable-extensions");
+			 //options.addArguments("--disable-notifications");
 			//options.addArguments("disable-infobars");
-	        driver = new ChromeDriver(options);
-	      options.addArguments("--disable-notifications");
-	      System.out.println("Going to lanuch browser");
-	      driver.manage().window().maximize();
-	      driver.get("https://ejtp.fa.em2.oraclecloud.com/fscmUI/faces/FuseWelcome");
-	      
-	      //Logger.log(LogStatus.INFO, "Browser Started");
+		    //driver = new ChromeDriver(options);
+		 // options.addArguments("--disable-notifications");
+		  //driver.get("https://ejtp.fa.em2.oraclecloud.com/fscmUI/faces/FuseWelcome");
+			//Logger.log(LogStatus.INFO, "Browser Started");
+		  driver = new FirefoxDriver();
+		  System.out.println("Going to lanuch browser");
+			 driver.manage().window().maximize();
+		  driver.navigate().to("https://ejtp.fa.em2.oraclecloud.com/fscmUI/faces/FuseWelcome");
 		  System.out.println("Browser Lanuched sucessfully");
 
 			//Login Function
@@ -225,8 +217,11 @@ public boolean create_AccDetails(){
 			
 		}
 		
-		
-	}
+		}
+	//@AfterTest
+	//public void afterTest() {
+		//driver.quit();			
+	//}	
 	
 }
 
