@@ -57,6 +57,14 @@ public boolean create_AccDetails(){
 			button.click();
 			Thread.sleep(15000);
 			
+			//Getting the Opportunity name and validating the condition
+			WebElement AccountName = driver.findElement(By.xpath("//input[@id = '_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:r1:0:r1:0:it4::content']"));
+			String AccName = AccountName.getAttribute("value");
+			System.out.println("The Account Name is"+AccName);
+			
+			if(AccName.contains("POC_DEMO_SalesCloud"))
+			{
+				
 			//Creating the opportunity
 			System.out.println("Going to click on the Opportunity");
 			WebElement opportunity = driver.findElement(By.xpath("//div[@id = '_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:Opportunities::text']"));
@@ -73,6 +81,7 @@ public boolean create_AccDetails(){
 				WebElement OppName = driver.findElement(By.xpath("//input[@id ='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:r4:1:r3:0:pt1:it1::content']"));
 			    OppName.sendKeys("POC_Demo_Opportunity");
 			    
+			    
 				Thread.sleep(10000);
 			    WebElement PrimaryContact = driver.findElement(By.xpath("//input[@id ='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:r4:1:r3:0:pt1:primaryContact::content']"));
 			    PrimaryContact.sendKeys("Shruthi B K");
@@ -86,6 +95,12 @@ public boolean create_AccDetails(){
 			    SummrySavebutt.click();
 			    Thread.sleep(10000);
 			    
+			    //Validating the Opportunity name
+			    
+			    WebElement Oppname = driver.findElement(By.xpath("//input[@id ='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:r4:1:r3:1:pt1:r1:0:name::content']"));
+			    String Oppname1 = Oppname.getAttribute("value");
+			    System.out.println("The Oppaname is"+Oppname1);
+			    
 			    //Opoortunity Summary Page
 			    Thread.sleep(10000);
 			    WebElement OppSave =  driver.findElement(By.xpath("//button[@id='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:r4:1:r3:1:pt1:object-subtitle:cb1']"));
@@ -96,7 +111,7 @@ public boolean create_AccDetails(){
 			    WebElement Oppsave1 = driver.findElement(By.xpath("//button[@id='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:1:pt1:object-subtitle:cb8']"));
 			    Oppsave1.click();
 			    
-			}
+			}}
 		catch(Exception e)
 		{
 			System.out.println("The excecption is"+e);
@@ -185,7 +200,7 @@ public boolean create_AccDetails(){
 				 Thread.sleep(15000);
 				 
 				 WebElement Accname = driver.findElement(By.xpath("//input[@id='_FOpt1:_FOr1:0:_FOSritemNode_service_accounts:0:_FOTsr1:0:pt1:r22:0:pt1:it1::content']"));
-				 Accname.sendKeys("POC_DEMO_2");
+				 Accname.sendKeys("POC_DEMO_SalesCloud");
 				 System.out.println("Sucessfully Entered the Account Name");
 				 Thread.sleep(15000);
 				/* WebElement Savebutton = driver.findElement(By.xpath("//button[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r22:0:pt1:AP1:cb3']"));
