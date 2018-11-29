@@ -224,7 +224,7 @@ public boolean create_AccDetails(){
 			 Thread.sleep(10000);
 			 WebElement Signout = driver.findElement(By.xpath("//a[@id='_FOpt1:_UISlg1']"));
 			 Signout.click();
-			 System.out.println("Sucessfully Signed out from the application");
+			 System.out.println("Sucessfully Signed out from the applications");
 			 driver.close();
 			
 		} catch (Exception e) {
