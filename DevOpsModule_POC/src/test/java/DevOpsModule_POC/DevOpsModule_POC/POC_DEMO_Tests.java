@@ -124,7 +124,7 @@ public boolean create_AccDetails(){
 //public void beforeTest() {	
     //}		
 
-	@Test
+@Test(priority = 2)
 	public void Login () {
 		System.out.println("Test1");
 		try 

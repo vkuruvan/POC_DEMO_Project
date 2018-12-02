@@ -2,11 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
   
 <suite name="demoxmlfilecreation" verbose="1" >
-  <test name="demoxml" >
+
+<test name="demoxml1" >
     <classes>
-       <class name="DevOpsModule_POC.DevOpsModule_POC.POC_DEMO_Tests">
-       </class>
+       <class name="DevOpsModule_POC.DevOpsModule_POC.Mobile_Automation_POC"/>
+       <class name="DevOpsModule_POC.DevOpsModule_POC.POC_DEMO_Tests"/>
     </classes>
   </test>
+    
  </suite>
 
