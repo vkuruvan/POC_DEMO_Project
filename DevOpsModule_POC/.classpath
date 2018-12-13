@@ -8,6 +8,7 @@
 	</classpathentry>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
+			<attribute name="test" value="true"/>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
@@ -33,6 +34,7 @@
 	<classpathentry kind="lib" path="C:/Selinium_javadrivers/Reportjar/jsoup-1.8.3.jar"/>
 	<classpathentry kind="lib" path="C:/Selinium_javadrivers/Reportjar/mongodb-driver-3.0.4.jar"/>
 	<classpathentry kind="lib" path="C:/Selinium_javadrivers/Reportjar/mongodb-driver-core-3.0.4.jar"/>
-	<classpathentry kind="lib" path="C:/Selinium_javadrivers/Reportjar/sqlite-jdbc-3.8.11.1.jar"/>
+	<classpathentry kind="lib" path="C:/Selinium_javadrivers/com.mysql.jdbc_5.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Selinium_javadrivers/JDBC JAR/ojdbc6-11.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -5,10 +5,8 @@
 
 <test name="demoxml1" >
     <classes>
-       <class name="DevOpsModule_POC.DevOpsModule_POC.Mobile_Automation_POC"/>
        <class name="DevOpsModule_POC.DevOpsModule_POC.POC_DEMO_Tests"/>
     </classes>
   </test>
-    
- </suite>
+     </suite>
 
